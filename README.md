@@ -21,6 +21,7 @@ cp terraform.tfvars .terraform.tfvars
 ### Configuration
 
 Replace `YOUR_AWS_ACCOUNT_ID` in `.terrraform.tfvars` and `.github/workflows/main.yml` with your AWS account ID.
+Also, replace [`client_id_list`](https://github.com/takanabe/github-actions-oidc-test/blob/e88aea863fe586515709969dc7d4917bdbbef959/main.tf#L27) with your repository URL.
 
 ### Install Terraform
 
