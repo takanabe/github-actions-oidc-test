@@ -1,3 +1,5 @@
+**CAUTION!! GitHub does not announce ID token for GitHub Actions as GA. Please don't use this feature in production. Breaking changes could be introduced at any moment.**
+
 # github-actions-oidc-test
 
 Test out AssumeRoleWithWebIdentity using ID token issued by GitHub OIDC provider. All AWS resources are deployed using Terraform.
