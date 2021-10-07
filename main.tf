@@ -22,9 +22,9 @@ provider "aws" {
 
 # https://github.com/github/roadmap/issues/249
 resource "aws_iam_openid_connect_provider" "github_oidc_for_takanabe_github_actions_oidc_test" {
-  url = "https://vstoken.actions.githubusercontent.com"
-  # By default, GitHub OIDC sets a repository URL as audience in ID Token
-  client_id_list = ["https://github.com/takanabe/github-actions-oidc-test"]
+  url = "https://token.actions.githubusercontent.com"
+  # By default, GitHub OIDC sets a repository owner URL as audience in ID Token
+  client_id_list = ["https://github.com/takanabe"]
   # https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_oidc_verify-thumbprint.html
   thumbprint_list = ["a031c46782e6e6c662c2c87c76da9aa62ccabd8e"]
 }
@@ -44,7 +44,7 @@ data "aws_iam_policy_document" "GitHubActions_assume_role_policy" {
 
     condition {
       test     = "StringLike"
-      variable = "vstoken.actions.githubusercontent.com:sub"
+      variable = "token.actions.githubusercontent.com:sub"
       values   = ["repo:takanabe/github-actions-oidc-test:*"]
     }
   }
